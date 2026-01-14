@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>AMR Mapping</title>
+  <script src="https://cdn.jsdelivr.net/npm/roslib/build/roslib.min.js"></script>
+</head>
+<body>
+  <h1>AMR Mapping UI</h1>
+  <script>
+    const ros = new ROSLIB.Ros({
+      url: 'ws://' + location.hostname + ':9090'
+    });
+    ros.on('connection', () => {
+      console.log('Connected to ROS');
+    });
+    ros.on('error', (error) => {
+      console.log('ROS connection error:', error);
+    })
+  </script>
+</body>
+</html>
